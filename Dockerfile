@@ -13,3 +13,6 @@ RUN xbuild/node-install v0.10.29 $HOME/local/node-v0.10
 
 ENV PATH $HOME/local/ruby-2.1/bin:$PATH
 ENV PATH $HOME/local/node-v0.10/bin:$PATH
+
+# Re change user
+USER root

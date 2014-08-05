@@ -8,11 +8,11 @@ WORKDIR /home/appuser
 ENV HOME /home/appuser
 
 # Install app languages
-RUN xbuild/ruby-install 2.1.2 $HOME/local/ruby-2.1
+RUN xbuild/ruby-install 2.0.0-p481 $HOME/local/ruby-2.0
 RUN xbuild/node-install v0.10.30 $HOME/local/node-v0.10
 RUN xbuild/perl-install 5.20.0 $HOME/local/perl-5.20
 
-ENV PATH $HOME/local/ruby-2.1/bin:$PATH
+ENV PATH $HOME/local/ruby-2.0/bin:$PATH
 ENV PATH $HOME/local/node-v0.10/bin:$PATH
 ENV PATH $HOME/local/perl-5.20/bin:$PATH
 

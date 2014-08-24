@@ -8,7 +8,7 @@ RUN adduser $APP_USER
 # error using chpasswd with host networking and ubuntu:14.04 image Issue
 # github.com/docker/docker/issues/5704
 # RUN echo $APP_USER:$APP_USER234 | chpasswd
-RUN echo $APP_USER ALL=(ALL) NOPASSWD:ALL >> /etc/sudoers.d/docker
+RUN echo "$APP_USER ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/docker
 
 # Change user
 USER $APP_USER

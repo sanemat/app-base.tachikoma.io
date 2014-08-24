@@ -2,10 +2,20 @@ FROM sanemat/gocha:latest
 
 MAINTAINER sanemat sanemat@tachikoma.io
 
+# Create user
+ENV APP_USER appuser
+RUN adduser $APP_USER -m
+RUN echo $APP_USER:$APP_USER234 | chpasswd
+RUN echo $APP_USER ALL=(ALL) NOPASSWD:ALL >> /etc/sudoers.d/docker
+
 # Change user
-USER appuser
-WORKDIR /home/appuser
-ENV HOME /home/appuser
+USER $APP_USER
+ENV HOME /home/$APP_USER
+WORKDIR $HOME
+
+# Install xbuild
+RUN git clone https://github.com/tagomoris/xbuild $HOME/xbuild
+RUN mkdir -p $HOME/local
 
 # Install app languages
 RUN xbuild/ruby-install 2.0.0-p481 $HOME/local/ruby-2.0

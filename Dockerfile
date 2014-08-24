@@ -5,7 +5,9 @@ MAINTAINER sanemat sanemat@tachikoma.io
 # Create user
 ENV APP_USER appuser
 RUN adduser $APP_USER
-RUN echo $APP_USER:$APP_USER234 | chpasswd
+# error using chpasswd with host networking and ubuntu:14.04 image Issue
+# github.com/docker/docker/issues/5704
+# RUN echo $APP_USER:$APP_USER234 | chpasswd
 RUN echo $APP_USER ALL=(ALL) NOPASSWD:ALL >> /etc/sudoers.d/docker
 
 # Change user

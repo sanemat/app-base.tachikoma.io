@@ -3,16 +3,15 @@ FROM sanemat/gocha:latest
 MAINTAINER sanemat sanemat@tachikoma.io
 
 # Create user
-ENV APP_USER appuser
-RUN adduser $APP_USER
+RUN adduser appuser
 # error using chpasswd with host networking and ubuntu:14.04 image Issue
 # github.com/docker/docker/issues/5704
-# RUN echo $APP_USER:$APP_USER234 | chpasswd
-RUN echo "$APP_USER ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/docker
+# RUN echo appuser:appuser234 | chpasswd
+RUN echo "appuser ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/docker
 
 # Change user
-USER $APP_USER
-ENV HOME /home/$APP_USER
+USER appuser
+ENV HOME /home/appuser
 WORKDIR $HOME
 
 # Install xbuild

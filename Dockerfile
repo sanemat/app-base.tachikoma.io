@@ -33,6 +33,3 @@ RUN npm install -g david
 
 # Re change user
 USER root
-
-# docker bug?
-RUN chown -R appuser:appuser /home/appuser

@@ -33,3 +33,8 @@ RUN npm install -g david
 
 # Re change user
 USER root
+
+# docker permission bug?
+RUN mv /home/appuser /temporary_dir
+RUN chown -R appuser:appuser /temporary_dir
+RUN mv /temporary_dir /home/appuser

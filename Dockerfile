@@ -23,11 +23,13 @@ RUN xbuild/ruby-install 2.0.0-p481 /home/appuser/local/ruby-2.0
 RUN xbuild/node-install v0.10.30 /home/appuser/local/node-v0.10
 RUN xbuild/perl-install 5.20.0 /home/appuser/local/perl-5.20
 RUN xbuild/php-install 5.5.17 /home/appuser/local/php-5.5
+RUN xbuild/python-install 3.4.1 /home/appuser/local/python-3.4
 
 ENV PATH /home/appuser/local/ruby-2.0/bin:$PATH
 ENV PATH /home/appuser/local/node-v0.10/bin:$PATH
 ENV PATH /home/appuser/local/perl-5.20/bin:$PATH
 ENV PATH /home/appuser/local/php-5.5/bin:$PATH
+ENV PATH /home/appuser/local/python-3.4/bin:$PATH
 
 # Install bundle libraries
 # bundler and carton already installed

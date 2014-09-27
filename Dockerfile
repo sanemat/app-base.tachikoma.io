@@ -19,9 +19,9 @@ RUN git clone https://github.com/tagomoris/xbuild /home/appuser/xbuild
 RUN mkdir -p /home/appuser/local
 
 # Install app languages
-RUN xbuild/ruby-install 2.0.0-p481 /home/appuser/local/ruby-2.0
-RUN xbuild/node-install v0.10.30 /home/appuser/local/node-v0.10
-RUN xbuild/perl-install 5.20.0 /home/appuser/local/perl-5.20
+RUN xbuild/ruby-install 2.0.0-p576 /home/appuser/local/ruby-2.0
+RUN xbuild/node-install v0.10.31 /home/appuser/local/node-v0.10
+RUN xbuild/perl-install 5.20.1 /home/appuser/local/perl-5.20
 RUN xbuild/python-install 3.4.1 /home/appuser/local/python-3.4
 
 ENV PATH /home/appuser/local/ruby-2.0/bin:$PATH

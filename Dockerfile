@@ -20,7 +20,7 @@ RUN mkdir -p /home/appuser/local
 
 # Install app languages
 RUN xbuild/ruby-install 2.0.0-p598 /home/appuser/local/ruby-2.0
-RUN xbuild/node-install v0.10.31 /home/appuser/local/node-v0.10
+RUN xbuild/node-install v0.10.35 /home/appuser/local/node-v0.10
 RUN xbuild/perl-install 5.20.1 /home/appuser/local/perl-5.20
 RUN xbuild/python-install 3.4.1 /home/appuser/local/python-3.4
 

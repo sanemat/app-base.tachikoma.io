@@ -20,11 +20,11 @@ RUN mkdir -p /home/appuser/local
 
 # Install app languages
 RUN xbuild/ruby-install 2.1.9 /home/appuser/local/ruby-2.1
-RUN xbuild/node-install v0.10.38 /home/appuser/local/node-v0.10
+RUN xbuild/node-install v0.12.15 /home/appuser/local/node-v0.12
 RUN xbuild/perl-install 5.20.2 /home/appuser/local/perl-5.20
 RUN xbuild/python-install 3.4.3 /home/appuser/local/python-3.4
 
-ENV PATH /home/appuser/local/node-v0.10/bin:/home/appuser/local/perl-5.20/bin:/home/appuser/local/python-3.4/bin:/home/appuser/local/ruby-2.1/bin:$PATH
+ENV PATH /home/appuser/local/node-v0.12/bin:/home/appuser/local/perl-5.20/bin:/home/appuser/local/python-3.4/bin:/home/appuser/local/ruby-2.1/bin:$PATH
 
 # Install bundle libraries
 # bundler and carton already installed

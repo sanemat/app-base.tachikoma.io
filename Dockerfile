@@ -29,6 +29,7 @@ ENV PATH /home/appuser/local/node-v0.12/bin:/home/appuser/local/perl-5.22/bin:/h
 # Install bundle libraries
 # bundler and carton already installed
 # avoid bundling ruby version
+RUN gem uninstall bundler
 RUN gem install bundler --version "~>1.11.0"
 RUN npm install -g david
 
